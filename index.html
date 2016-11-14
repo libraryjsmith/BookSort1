@@ -1,15 +1,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
-<title>Sort some Zelda games or something!</title>
+<title>Book Sort</title>
 <script type="text/javascript">
 <!--
 //*********************************************************
 //
-// 評価するメンバーの名前のリスト
-//
-// この部分を変更して下さい。名前の削除・追加も可能です。
-// 名前を引用符(")で括り、コンマ(,)で区切って下さい。
-// 但し、リストの最後にはコンマを入れてはいけません。
 //
 // Add the names of the characters you wish to sort below.
 //
@@ -22,7 +17,6 @@
 // Code grabbed from the view-source: of 
 // http://blingbling.konjiki.jp/bbst.html
 // 
-// I do not know where the original code is from, sorry.
 // 
 // Most of the translations are from Google Translate.
 // Which is terrible, but what ya gonna do?
@@ -374,137 +368,3 @@ iframe {display:none !important;}
 	showImage();
 //-->
 </script>
-<!-- BEGIN TUMBLR CODE --><iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target" src="./Sort some games or something!_files/analytics.html"></iframe><script type="text/javascript">
-    (function(){
-        var analytics_frame = document.getElementById('ga_target');
-        var analytics_iframe_loaded;
-        var user_logged_in;
-        var blog_is_nsfw = 'No';
-        var addthis_enabled = false;
-
-        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        var eventer = window[eventMethod];
-        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-        eventer(messageEvent,function(e) {
-            var message = (e.data && e.data.split) ? e.data.split(';') : '';
-            switch (message[0]) {
-                case 'analytics_iframe_loaded':
-                    analytics_iframe_loaded = true;
-                    postCSMessage();
-                    postGAMessage();
-                    postATMessage();
-                    postRapidMessage();
-                    break;
-                case 'user_logged_in':
-                    user_logged_in = message[1];
-                    postGAMessage();
-                    postATMessage();
-                    break;
-            }
-        }, false);
-
-        analytics_frame.src = "https://secure.assets.tumblr.com/analytics.html?c45f653a90aded9d4dfc7859484e97c5#" +
-                              "http://blazsort.tumblr.com";
-        function postGAMessage() {
-            if (analytics_iframe_loaded && user_logged_in) {
-                var is_ajax = false;
-                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/?route=%2F'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
-            }
-        }
-        function postCSMessage() {
-            COMSCORE = true;
-            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
-        }
-        function postATMessage() {
-            if (addthis_enabled && analytics_iframe_loaded) {
-                analytics_frame.contentWindow.postMessage('enable_addthis', analytics_frame.src.split('/analytics.html')[0]);
-            }
-        }
-        function postRapidMessage() {
-                            if (analytics_iframe_loaded) {
-                    var is_ajax = '';
-                    var route = '/';
-                    var tumblelog_id = '70580096';
-                    var yahoo_space_id = '1197719229';
-                    var rapid_client_only = '1';
-                    var apv = '1';
-                    var rapid_ex = '';
-
-                    analytics_frame.contentWindow.postMessage(
-                        [
-                            'tick_rapid', is_ajax, route, user_logged_in, tumblelog_id,
-                            yahoo_space_id, rapid_client_only, apv, rapid_ex
-                        ].join(';'),
-                        analytics_frame.src.split('/analytics.html')[0]
-                    );
-                }
-                    }
-    })();
-</script><script type="text/javascript">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1448357612&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvYmxhenNvcnQudHVtYmxyLmNvbVwvIiwicmVxdHlwZSI6MCwicm91dGUiOiJcLyJ9&U=PDDAAABDPM&K=551dc6c78c8e3852c5d2f44c113ba4487bc337a7a206022f1970787b619f4870&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript>&lt;img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1448357612&amp;J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvYmxhenNvcnQudHVtYmxyLmNvbVwvIiwicmVxdHlwZSI6MCwicm91dGUiOiJcLyIsIm5vc2NyaXB0IjoxfQ==&amp;U=PDDAAABDPM&amp;K=bed38554c21eea8e3f135e96bdc3432d3c64e96d54026c48df7c368bd3da6a85&amp;R="&gt;</noscript><script>
-        (function (w,d) {
-            'use strict';
-            var l = function(el, type, listener, useCapture) {
-                el.addEventListener ?
-                el.addEventListener(type, listener, !!useCapture) :
-                el.attachEvent && el.attachEvent('on' + type, listener, !!useCapture);
-            };
-            var a = function () {
-                                if (d.getElementById('tumblr-cdx')) {
-                    return;
-                }
-                var s = d.createElement('script');
-                var el = d.getElementsByTagName('script')[0];
-                s.async = true;
-                s.src = 'http://assets.tumblr.com/assets/scripts/vendor/cedexis/cedexis.radar.js?_v=7450eec657e34e1e41dac4e1af96a170';
-                s.type = 'text/javascript';
-                s.id = 'tumblr-cdx';
-                d.body.appendChild(s);
-            };
-            l(w,'load',a);
-        }(window, document));
-</script><script>
-        (function (w,d) {
-            'use strict';
-            var l = function(el, type, listener, useCapture) {
-                el.addEventListener ?
-                el.addEventListener(type, listener, !!useCapture) :
-                el.attachEvent && el.attachEvent('on' + type, listener, !!useCapture);
-            };
-            var a = function () {
-                                if (d.getElementById('tumblr-cdx')) {
-                    return;
-                }
-                var s = d.createElement('script');
-                var el = d.getElementsByTagName('script')[0];
-                s.async = true;
-                s.src = 'http://assets.tumblr.com/assets/scripts/vendor/cedexis/cedexis.radar.js?_v=7450eec657e34e1e41dac4e1af96a170';
-                s.type = 'text/javascript';
-                s.id = 'tumblr-cdx';
-                d.body.appendChild(s);
-            };
-            l(w,'load',a);
-        }(window, document));
-</script><iframe id="tumblr_controls" class="tumblr_controls sticky" width="1" height="1" frameborder="0" scrolling="no" src="./Sort some games or something!_files/o.html"></iframe>
-<div id="teaser_iframe_container" style="display:none;"><iframe scrolling="no" frameborder="0" src="./Sort some games or something!_files/teaser.html" id="teaser_iframe" width="1" height="1"></iframe></div><script type="text/javascript">
-    (function(Tumblr){
-        var follow_iframe_initialized = false;
-        if (Tumblr.FollowTeaser && Tumblr.PostMessageListener) {
-            // Don't do anything until the first initialize event
-            Tumblr.PostMessageListener.initialize(function(message, origin) {
-                if (follow_iframe_initialized || message.length < 2) return;
-
-                if (message[0] === 'follow_iframe' && message[1] === 'enable') {
-                    Tumblr.FollowTeaser.current_page = 1;
-                    Tumblr.FollowTeaser.infer_infinite_scroll = true;
-                    Tumblr.FollowTeaser.create_from_tumblr_controls("http:\/\/assets.tumblr.com\/assets\/html\/iframe\/follow.html?_v=ce8b645eb2139312dd40a97809a4a7f3");
-                    Tumblr.FollowTeaser.scroll_listener(true);
-                    follow_iframe_initialized = true;
-                }
-            });
-        }
-    })(this.Tumblr || (this.Tumblr = {}));
-</script><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><!-- END TUMBLR CODE -->
-
-
-
-</div></font><script async="" src="./Sort some games or something!_files/cedexis.radar.js" type="text/javascript" id="tumblr-cdx"></script><div id="cdx"></div></body></html>
