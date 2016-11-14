@@ -14,40 +14,108 @@
 //
 //*********************************************************
 //
-// Code grabbed from the view-source: of 
+// Code grabbed from the view-source: of
 // http://blingbling.konjiki.jp/bbst.html
-// 
-// 
+//
+//
 // Most of the translations are from Google Translate.
 // Which is terrible, but what ya gonna do?
-// 
+//
 //*********************************************************
-var namMember = new Array(
-//---------------------------------------------------------
-"The Legend of Zelda",
-"Adventure of Link",
-"Link's Awakening",
-"Wand of Gamelon",
-"The Faces of Evil",
-"Zelda's Adventure",
-"A Link to the Past",
-"Ocarina of Time",
-"Majora's Mask",
-"Oracle of Seasons",
-"Oracle of Ages",
-"The Wind Waker",
-"Four Swords Adventures",
-"Twilight Princess",
-"The Minish Cap",
-"Skyward Sword",
-"Link's Crossbow Training",
-"Phantom Hourglass",
-"Spirit Tracks",
-"A Link Between Worlds",
-"Tri Force Heroes",
-"Hyrule Warriors",
-"Freshly-Picked Tingle's Rosy Rupeeland"
-);
+var namMember = [
+	{
+		title: "The Legend of Zelda",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Adventure of Link",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Link's Awakening",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Wand of Gamelon",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "The Faces of Evil",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Zelda's Adventure",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "A Link to the Past",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Ocarina of Time",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Majora's Mask",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Oracle of Seasons",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Oracle of Ages",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "The Wind Waker",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Four Swords Adventures",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Twilight Princess",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "The Minish Cap",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Skyward Sword",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Link's Crossbow Training",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Phantom Hourglass",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Spirit Tracks",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "A Link Between Worlds",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Tri Force Heroes",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Hyrule Warriors",
+		img: 'img/Test1.jpg'
+	},
+	{
+		title: "Freshly-Picked Tingle's Rosy Rupeeland",
+		img: 'img/Test1.jpg'
+	}
+];
 //*********************************************************
 
 var lstMember = new Array();
@@ -249,7 +317,7 @@ function showResult() {
 	str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Game<\/td><\/tr>";
 
 	for (i=0; i<namMember.length; i++) {
-		str += "<tr><td style=\"border:1px solid #000; text-align:right; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
+		str += "<tr><td style=\"border:1px solid #000; text-align:right; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]].title+"<\/td><\/tr>";
 		if (i<namMember.length-1) {
 			if (equal[lstMember[0][i]]==lstMember[0][i+1]) {
 				sameRank++;
@@ -268,43 +336,34 @@ function showResult() {
 //(Display of two elements to be compared)+++++++++++++++++
 function showImage() {
 	var str0 = "Battle No."+numQuestion+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
-	var str1 = ""+toNameFace(lstMember[cmp1][head1]);
-	var str2 = ""+toNameFace(lstMember[cmp2][head2]);
+	var obj1 = toNameFace(lstMember[cmp1][head1]);
+	var obj2 = toNameFace(lstMember[cmp2][head2]);
 
 	document.getElementById("battleNumber").innerHTML = str0;
-	document.getElementById("leftField").innerHTML = str1;
-	document.getElementById("rightField").innerHTML = str2;
+	document.getElementById("leftField").innerHTML = createElm(obj1);
+	document.getElementById("rightField").innerHTML = createElm(obj2);
 
 	numQuestion++;
+}
+
+function createElm (obj) {
+	return '<img src="' + obj.img + '">' + obj.title;
 }
 
 //数値を名前（顔文字）に変換+++++++++++++++++++++++++++++++
 //Convert name to (emoticons) a number+++++++++++++++++++++
 
 function toNameFace(n){
-	var str = namMember[n];
-
-	//顔文字を追加する場合は以下のコメントアウトを外す
-	//namMemberのインデックスと矛盾しないように注意
-	/*
-	str += "<br>────<br>";
-	switch(n) {
-		//case -1 はサンプルなので削除すること
-		case -1: str+="（ ´∀｀）";break;
-		default: str+=""+n;
-	}
-	*/
-	return str;
+	return namMember[n];
 }
 //-->
 </script>
 <style type="text/css">
-<!--
 /**********************************************************
 
  表のスタイルを変更する場合はここを編集してください。
  Please edit here if you want to change the style of the table.
- 
+
 **********************************************************/
 iframe {display:none !important;}
 #mainTable{
@@ -333,18 +392,13 @@ iframe {display:none !important;}
 	height: 70px;
 	border: 1px solid #000;
 }
-//-->
+img {
+  max-width: 120px;
+  padding: 10px;
+}
 </style>
 <style type="text/css">figure {margin: 0;}</style>
-<link rel="stylesheet" type="text/css" href="./Sort some games or something!_files/commercial.css"><meta name="robots" content="noindex">
-
-<script src="./Sort some games or something!_files/tumblelog.js"></script>
-
-<link rel="stylesheet" type="text/css" href="./Sort some games or something!_files/stylesheet.css">
-
-
-
-
+<meta name="robots" content="noindex">
 
 <table id="mainTable" align="center">
 	<tbody><tr>
@@ -357,8 +411,8 @@ iframe {display:none !important;}
 		</td>
 		<td id="rightField" onclick="if(finishFlag==0)sortList(1);" rowspan="2">Destiny</td>
 	</tr>
-	
-	
+
+
 </tbody></table><br><br>
 <div id="resultField" style="text-align:center;">
 </div>
