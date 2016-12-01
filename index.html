@@ -7,7 +7,7 @@
 //*********************************************************
 //
 //
-// Add the names of the characters you wish to sort below.
+// Add the names of the books you wish to sort below.
 //
 // Names should be enclosed in quotation marks (").
 // Names should be separated by a comma (,).
@@ -288,9 +288,8 @@ function sortList(flag){
 	}
 
 	if (cmp1<0) {
-		str = "Battle No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
+		str = "Sort No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
 		document.getElementById("battleNumber").innerHTML = str;
-
 		showResult();
 		finishFlag = 1;
 	}
@@ -308,7 +307,7 @@ function showResult() {
 	var i;
 
 	str += "<table style=\"width:200px; font-size:12px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
-	str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Game<\/td><\/tr>";
+	str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Book<\/td><\/tr>";
 
 	for (i=0; i<namMember.length; i++) {
 		str += "<tr><td style=\"border:1px solid #000; text-align:right; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]].title+"<\/td><\/tr>";
@@ -399,14 +398,14 @@ img {
 
 <table id="mainTable" align="center">
 	<tbody><tr>
-		<td id="battleNumber" colspan="3" style="padding-bottom: 10px;">Battle No.2<br>0% sorted.</td>
+		<td id="battleNumber" colspan="3" style="padding-bottom: 10px;">Sort No.2<br>0% sorted.</td>
 	</tr>
 	<tr>
-		<td id="leftField" onclick="if(finishFlag==0)sortList(-1);" rowspan="2">Starcraft</td>
+		<td id="leftField" onclick="if(finishFlag==0)sortList(-1);" rowspan="2">THIS IS</td>
 		<td class="middleField" onclick="if(finishFlag==0)sortList(0);">
 			Indifferent
 		</td>
-		<td id="rightField" onclick="if(finishFlag==0)sortList(1);" rowspan="2">Destiny</td>
+		<td id="rightField" onclick="if(finishFlag==0)sortList(1);" rowspan="2">BROKEN</td>
 	</tr>
 
 
