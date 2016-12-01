@@ -301,6 +301,7 @@ function sortList(flag){
 //結果の表示+++++++++++++++++++++++++++++++++++++++++++++++
 //(View Results)+++++++++++++++++++++++++++++++++++++++++++
 function showResult() {
+	showFinishedMessage();
 	var ranking = 1;
 	var sameRank = 1;
 	var str = "";
@@ -323,6 +324,10 @@ function showResult() {
 	str += "<\/table>";
 
 	document.getElementById("resultField").innerHTML = str;
+}
+
+function showFinishedMessage () {
+	document.getElementById('finishedMessage').innerHTML = '<p>Please take a screenshot of the below table and send to Dark</p>'
 }
 
 //比較する２つ要素の表示+++++++++++++++++++++++++++++++++++
@@ -392,6 +397,8 @@ img {
   max-width: 120px;
   padding: 10px;
 }
+
+#finishedMessage p { text-align: center; }
 </style>
 <style type="text/css">figure {margin: 0;}</style>
 <meta name="robots" content="noindex">
@@ -410,6 +417,7 @@ img {
 
 
 </tbody></table><br><br>
+<div id="finishedMessage"></div>
 <div id="resultField" style="text-align:center;">
 </div>
 <script type="text/javascript">
